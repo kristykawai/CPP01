@@ -7,19 +7,16 @@
 class Zombie
 {
 private:
-	std::string name;
+	std::string _name;
 
 public:
-	Zombie() : name(""){};
-	Zombie(const std::string& zname)
-	{
-		name = zname;
-	};
-
-	void setName(const std::string& zname){name = zname;}
-
-	std::string getName() const {return name;}
-	void announce()const {std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;}
+	Zombie();
+	~Zombie();
+	Zombie(const std::string& name);
+	void setName(const std::string& name);
+	std::string getName(void)const;
+	void announce(void)const;
 };
+
 
 #endif
