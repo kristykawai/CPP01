@@ -6,7 +6,7 @@
 /*   By: kchan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 15:39:09 by kchan             #+#    #+#             */
-/*   Updated: 2024/04/04 16:07:39 by kchan            ###   ########.fr       */
+/*   Updated: 2024/04/05 13:19:53 by kchan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,11 @@
 
 int main ()
 {
-	Zombie zombie;
-	
-	while(1)
-	{
-		std::cout << "Enter name of the Zombie:" << std::endl;
-		std::string name;
-		std::getline(std::cin, name);
-		zombie.setName(name);
-		zombie.announce();
-		
-	}
+	Zombie *heapZombie;
+
+	heapZombie = newZombie("Heap");
+	heapZombie->announce();
+	randomChump("Stack");
+	delete heapZombie;
 	return(0);
 }

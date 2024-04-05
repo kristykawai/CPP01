@@ -1,35 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kchan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/05 11:47:44 by kchan             #+#    #+#             */
-/*   Updated: 2024/04/05 13:21:34 by kchan            ###   ########.fr       */
+/*   Created: 2024/04/05 12:50:43 by kchan             #+#    #+#             */
+/*   Updated: 2024/04/05 13:15:12 by kchan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie() : _name(""){}
-Zombie::Zombie(const std::string& name) : _name(name){}
-Zombie::~Zombie()
+//new is a function to dynamically allocate the memory
+// heapZombie is a pointer to a Zombie object, '->' to access members of an obj
+Zombie* newZombie(std::string name)
 {
-	std::cout<< _name + " Zombie is deleted." <<  std::endl;
-}
+	Zombie* heapZombie;
 
-void	Zombie::setName(const std::string& name)
-{ 
-	_name = name;
-}
-
-std::string Zombie::getName() const
-{
-	return _name;
-}
-
-void	Zombie::announce() const
-{
-	std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	heapZombie = new Zombie(name);
+	heapZombie->setName(name); 
+	return(heapZombie);
 }
