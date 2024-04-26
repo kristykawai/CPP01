@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kchan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/05 12:48:06 by kchan             #+#    #+#             */
-/*   Updated: 2024/04/26 17:19:16 by kchan            ###   ########.fr       */
+/*   Created: 2024/04/04 15:39:09 by kchan             #+#    #+#             */
+/*   Updated: 2024/04/26 17:46:53 by kchan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
 #include "Zombie.hpp"
 
-Zombie* newZombie(std::string name)
+int main ()
 {
-	Zombie* heapZombie;
+	Zombie *Zombie_arr;
 
-	heapZombie = new Zombie(name);
-	heapZombie->setName(name); 
-	return(heapZombie);
+	Zombie_arr = zombieHorde(10, "kawai");
+	for(int i = 0; i < 10; i++)
+		Zombie_arr[i].announce();
+		delete[] Zombie_arr;
+		
+	return(0);
 }
