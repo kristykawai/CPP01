@@ -1,24 +1,31 @@
-NAME		:= fight
-HEADERS		:= Weapon.hpp
-SRCS		:= main.cpp Weapon.cpp
-OBJS		:= $(SRCS:%.cpp=%.o)
-CC			:= c++
-CPPFLAGS 	= -Wall -Wextra -Werror -std=c++98
+NAME		=	fight
+CC			=	c++
+CPPFLAGS 	=	-Wall -Wextra -Werror -std=c++98
+SRC_DIR 	=	src/
+OBJ_DIR		=	obj/
+SRC			=	main.cpp \
+				Weapon.cpp \
+				HumanA.cpp
+OBJ			=	$(SRCS:%.cpp=%.o)
+INC			=	-I ./includes/
+SRCS		=	$(addprefix $(SRC_DIR),$(SRC))
+OBJS		=	$(addprefix $(OBJ_DIR),$(SRC))
 
-all			: $(NAME)
+all				: $(NAME)
 
-$(NAME)		: 	$(OBJS)
-				$(CC) $(OBJS) -o $(NAME)
+$(NAME)			: $(OBJS)
+				$(CC) $(OBJS) -o $@
 
-%.o			: %.cpp $(HEADERS)
-				$(CC) $(CPPFLAGS) -c $< -o $@
+$(OBJ_DIR)%.o	: $(SRC_DIR)%.cpp 
+				@mkdir -p $(OBJ_DIR)
+				$(CC) $(CPPFLAGS) -c $< -o $@ $(INC)
 
-clean		:
-				rm -rf $(OBJS)
+clean			:
+				rm -rf $(OBJ_DIR)
 
-fclean		:	clean
+fclean			:	clean
 				rm -rf $(NAME)
 
-re			:	fclean all
+re				:	fclean all
 
-.PHONY		:	clean fclean re
+.PHONY		:	all clean fclean re

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kawai <kawai@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kchan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 15:38:14 by kawai             #+#    #+#             */
-/*   Updated: 2024/05/02 16:02:38 by kawai            ###   ########.fr       */
+/*   Updated: 2024/05/03 13:06:34 by kchan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#include "../includes/Weapon.hpp"
 
 // Constructors
 //Default constructor

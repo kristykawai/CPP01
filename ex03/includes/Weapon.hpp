@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kawai <kawai@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kchan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 15:03:09 by kawai             #+#    #+#             */
-/*   Updated: 2024/05/02 15:48:51 by kawai            ###   ########.fr       */
+/*   Updated: 2024/05/03 12:43:54 by kchan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define WEAPON_HPP
 
 #include <iostream>
-#include <string>
 
 class Weapon
 {
