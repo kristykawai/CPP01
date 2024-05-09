@@ -6,7 +6,7 @@
 /*   By: kchan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 15:38:14 by kawai             #+#    #+#             */
-/*   Updated: 2024/05/03 13:06:34 by kchan            ###   ########.fr       */
+/*   Updated: 2024/05/09 13:16:40 by kchan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ Weapon::Weapon()
 }
 
 //Copy constructor
+//access the member function of & reference obj, you use .
+//if it is a pointer, use ->
 Weapon::Weapon(const Weapon &copy)
 {
 	_type = copy.getType();
@@ -47,7 +49,14 @@ Weapon & Weapon::operator=(const Weapon &assign)
  
 
 // Getters / Setters
-const std::string Weapon::getType() const
+//first const & means member function returns a const reference to type
+//second cost means the member function is not modifying the object
+const std::string &Weapon::getType() const
 {
-	return _type;
+	return (this->_type);
+}
+
+void Weapon::setType(const std::string &newType)
+{
+	_type = newType;
 }

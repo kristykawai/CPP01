@@ -6,7 +6,7 @@
 /*   By: kchan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 15:03:09 by kawai             #+#    #+#             */
-/*   Updated: 2024/05/03 12:43:54 by kchan            ###   ########.fr       */
+/*   Updated: 2024/05/09 13:16:41 by kchan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ class Weapon
 		Weapon & operator=(const Weapon &assign);
 		
 		// Getters / Setters
-		const std::string getType() const;
-		void setType(const std::string &newType){_type = newType;}
+		const std::string &getType() const;
+		void setType(const std::string &newType);
 };
 
 #endif
