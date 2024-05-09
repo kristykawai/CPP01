@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kchan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/03 13:59:44 by kchan             #+#    #+#             */
-/*   Updated: 2024/05/09 15:39:07 by kchan            ###   ########.fr       */
+/*   Created: 2024/05/09 13:47:57 by kchan             #+#    #+#             */
+/*   Updated: 2024/05/09 13:48:25 by kchan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../includes/Weapon.hpp"
 #include "../includes/HumanA.hpp"
+#include "../includes/HumanB.hpp"
 
-//for constant variable assignment
-HumanA::HumanA(const std::string& name, Weapon& weapon) : _name(name), _weapon(weapon){};
-
-HumanA::~HumanA()
+int main()
 {
-	std::cout << "Human A " << this->_name << " is deleted." << std::endl;
-}
+	{
+		Weapon club = Weapon("crude spiked club");
 
-void HumanA::attack()
-{
-	std::cout << this->_name <<  " attacks with their " << this->_weapon.getType() << "." << std::endl;
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	{
+		Weapon club = Weapon("crude spiked club");
+
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
+	
+	return (0);
 }

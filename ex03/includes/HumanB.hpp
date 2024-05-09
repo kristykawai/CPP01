@@ -6,7 +6,7 @@
 /*   By: kchan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 13:09:38 by kchan             #+#    #+#             */
-/*   Updated: 2024/05/03 13:22:14 by kchan            ###   ########.fr       */
+/*   Updated: 2024/05/09 13:49:47 by kchan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class HumanB
 	public:
 		HumanB(const std::string& name);
 		~HumanB();
-		void setWeapon(Weapon &Weapon);
+		void setWeapon(Weapon &weapon);
 		void attack(void);
 };
 
