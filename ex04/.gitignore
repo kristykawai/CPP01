@@ -1,2 +1,5 @@
 *.o
 settings.json
+replace
+test.txt
+test_processed.txt
