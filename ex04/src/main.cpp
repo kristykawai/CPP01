@@ -6,7 +6,7 @@
 /*   By: kawai <kawai@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 15:58:10 by kchan             #+#    #+#             */
-/*   Updated: 2024/05/10 17:53:58 by kawai            ###   ########.fr       */
+/*   Updated: 2024/05/10 18:01:02 by kawai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,14 @@ std::ofstream createProcessedFile(std::ifstream &inFile, std::string &outFileNam
 	return (outFile);
 }
 
+//for find function: If no matches were found, the function returns string::npos.
 std::string &strReplace(std::string &line, std::string &findStr,std::string &replaceWith)
 {
 	std::size_t	index;
 	
 	index = 0;
 	index = line.find(findStr);
-	while(index <= line.length())
+	while(index != std::string::npos)
 	{
 		line.erase(index, findStr.length());
 		line.insert(index, replaceWith);
